@@ -88,3 +88,75 @@ function mySome(arr, cb) {
     }
 return false;
 }
+
+//every()
+//Modifying Array prototype
+Array.prototype.myEvery = function (cb) {
+    for (let i=0; i< this.length; i++) {
+        let element = this[i];
+        if (cb(element) === false) {
+            return false;
+        }
+    }
+    return true;
+}
+
+//every()
+//Standalone
+function myEvery (arr,cb) {
+    for (let i=0; i<arr.length; i++) {
+        let element = arr[i];
+        if (cb(element) === false) {
+            return false;
+        }
+    }
+    return true;
+}
+
+//reduce
+//Modifying Array prototype
+Array.prototype.myReduce = function (cb, accu) {
+?????
+//reduce
+//Standalone
+????
+
+//includes()
+//Modifying Array prototype
+
+
+//includes()
+//Standalone
+
+//indexOf()
+//Modifying Array prototype
+
+//indexOf()
+//Standalone
+
+//push()
+//Modifying Array prototype
+
+//push()
+//Standalone
+
+//lastIndexOf()
+//Modifying Array prototype
+
+//lastIndexOf()
+//Standalone
+
+//Object.keys()
+//Modifying Array prototype
+
+//Object.keys()
+//Standalone
+
+//Object.values()
+//Modifying Array prototype
+
+//Object.values()
+//Standalone
+
+
+
