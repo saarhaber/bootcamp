@@ -233,6 +233,13 @@ function myLastIndexOf (arr, entry) {
   
 //Object.keys()
 //Modifying Array prototype
+Object.grabKeys = function (obj) {
+  let arr2 = [];
+  for (let key in obj) {
+    arr2.push(key);
+  }
+  return arr2;
+}
 
 //Object.keys()
 //Standalone
@@ -246,10 +253,17 @@ function grabKeys (obj) {
 
 //Object.values()
 //Modifying Array prototype
+Object.grabValues = function (obj) {
+  let arr2 = [];
+  for (let prop in obj) {
+    arr2.push(obj[prop]);
+  }
+  return arr2;
+}
 
 //Object.values()
 //Standalone
-function grabKeys (obj) {
+function grabValues (obj) {
     let arr2 = [];
     for (let prop in obj) {
       arr2.push(obj[prop]);
