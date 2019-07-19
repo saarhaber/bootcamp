@@ -12,7 +12,7 @@ document.getElementsByClassName("second");
 document.getElementsByTagName("ol")[0].getElementsByClassName("third")[0];
 
 // 5) Give the section with an id of container the text "Hello!".
-document.getElementById("container").innerText= "Hello!";
+//document.getElementById("container").innerText= "Hello!";
 
 // 6) Add the class main to the div with a class of footer.
 document.getElementsByClassName("footer")[0].classList.add("main");
@@ -24,14 +24,14 @@ document.getElementsByClassName("footer")[0].classList.remove("main");
 var node = document.createElement("LI");
 
 // 9) Give the li the text "four".
-var textnode = document.createTextNode("four");
-node.appendChild(textnode);
+node.innerHTML = ("four");
 
 // 10) Append the li to the ul element.
 document.getElementsByTagName("ul")[0].appendChild(node);
 
 // 12) Loop over all of the lis inside the ol tag and give them a background color of "green".
-document.getElementsByTagName("ol")[0].style.backgroundColor = "green";
+for (let i=0; i< document.getElementsByTagName("ol").length; i++)
+document.getElementsByTagName("ol")[i].style.backgroundColor = "green";
 
 // 13) Remove the div with a class of footer.
-document.getElementsByClassName("body")[0].classList.remove("footer");
+document.getElementsByTagName("body")[0].classList.remove("footer");
