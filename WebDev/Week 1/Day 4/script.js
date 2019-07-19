@@ -12,7 +12,8 @@ document.getElementsByClassName("second");
 document.getElementsByTagName("ol")[0].getElementsByClassName("third")[0];
 
 // 5) Give the section with an id of container the text "Hello!".
-//document.getElementById("container").innerText= "Hello!";
+var nodeText1 = "Hello!" 
+document.getElementById("container").prepend(nodeText1);
 
 // 6) Add the class main to the div with a class of footer.
 document.getElementsByClassName("footer")[0].classList.add("main");
