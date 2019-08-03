@@ -1,0 +1,12 @@
+.container{
+    text-align: center;
+}
+
+.items{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-grow: 1 0 20%;
+}

@@ -13,7 +13,7 @@ import {Link} from 'react-router-dom';
             <br></br>
             <Link to="/debits">Debits</Link> <br></br>
             <Link to="/credits">Credits</Link> <br></br>
-            <AccountBalance accountBalance={this.props.accountBalance} debits={this.props.debits}credits={this.props.credits}/>
+            <AccountBalance accountBalance={this.props.accountBalance} debits={this.props.debits} credits={this.props.credits}/>
           </div>
       );
     }

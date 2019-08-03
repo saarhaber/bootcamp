@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './components/Home.js';
 import UserProfile from './components/UserProfile.js';
 import LogIn from './LogIn.js';
@@ -56,6 +56,33 @@ class App extends Component {
     })  
   };
 
+  newDebit = (des, cost, time) =>{
+    let temp = (this.state.debits-parseInt(cost)).toFixed(2);
+    let data = {
+      amount: cost,
+      description :des,
+      date: time
+    }
+    let newArray = this.state.debitsData.push(data)
+    this.setState({
+      debits: temp,
+      description: newArray
+    })
+  }
+
+  newCredit = (des, cost, time) =>{
+    let temp = (this.state.credits+parseInt(cost));
+    let data = {
+      amount: cost,
+      description :des,
+      date: time
+    }
+    let newArray = this.state.creditsData.push(data)
+    this.setState({
+      credits: temp,
+      description: newArray
+    })
+  }
 
   render() {
 
@@ -64,8 +91,9 @@ class App extends Component {
         <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
     );
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
-    const DebitsComponent = () => (<Debits debits={this.state.debits}  accountBalance={this.state.credits - this.state.debits} debitsData={this.state.debitsData}/>)
-    const CreditsComponent = () => (<Credits credits={this.state.credits} accountBalance={this.state.credits - this.state.debits} creditsData={this.state.creditsData}/>)
+  const DebitsComponent = () => (<Debits debits={this.state.debits} debitsData={this.state.debitsData} newDebit={this.newDebit} accountBalance={(this.state.credits-this.state.debits).toFixed(2)}/>);
+    const CreditsComponent = () => (<Credits credits={this.state.credits} creditsData={this.state.creditsData} newCredit={this.newCredit} accountBalance={(this.state.credits-this.state.debits).toFixed(2)}/>);
+
 
     return (
         <Router>
