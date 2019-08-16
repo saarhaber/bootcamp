@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int rangeSumBST(TreeNode* root, int L, int R) {
+        if (root!=NULL){
+            if (root->val <= R && root->val >= L) {
+             return root->val + rangeSumBST(root->left, L, R) + rangeSumBST(root->right, L, R);
+            }
+            else if (root->left!=NULL && root->right!=NULL){
+                return rangeSumBST(root->left, L, R) + rangeSumBST(root->right, L, R);
+            }
+            else if (root->right!=NULL){
+                return rangeSumBST(root->right, L, R);
+            }
+            else if (root->left!=NULL){
+                return rangeSumBST(root->left, L, R);
+            }
+        }
+        return 0;
+    }
+};
